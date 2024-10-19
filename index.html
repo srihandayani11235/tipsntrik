@@ -32,13 +32,16 @@
                 var html = '';
                 row?.data?.forEach((items, index) => {
                     html += `<tr>
-                                <td>${items?.id}</td><td>${items?.service_code}</td><td>${items?.service_name}</td><td>${items?.service_icon}</td>
+                                <td>${items?.id}</td>
+                                <td>${items?.service_code}</td>
+                                <td>${items?.service_name}</td>
+                                <td>${items?.service_icon}</td>
                             </tr>`;
                 });
                 document.getElementById("ppp").innerHTML = html;
             });
     }
-    
+
     window.addEventListener("load", init);
 </script>
 
