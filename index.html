@@ -25,32 +25,20 @@
 
 </body>
 <script>
-    // async function init() {
-    //     await fetch('https://sample.rifhandi.com/services')
-    //         .then(rifqi => rifqi.json())
-    //         .then((ddd) => {
-    //             console.log(ddd)
-    //         });
-    // }
-
     async function init() {
         await fetch('https://sample.rifhandi.com/services')
             .then(yani => yani.json())
             .then((row) => {
-                // console.log(row?.data[0]?.service_name);
-                // document.getElementById("ppp").innerHTML=row?.data[0]?.service_name
-                // document.getElementById("pppp").innerHTML=row?.data[1]?.service_name
+                var html = '';
                 row?.data?.forEach((items, index) => {
-                    document.getElementById("ppp").innerHTML = `
-                        <tr>
-                            <td>${items?.id}</td><td>${items?.service_code}</td><td>${items?.service_name}</td><td>${items?.service_icon}</td>
-                        </tr>`;
+                    html += `<tr>
+                                <td>${items?.id}</td><td>${items?.service_code}</td><td>${items?.service_name}</td><td>${items?.service_icon}</td>
+                            </tr>`;
                 });
-
+                document.getElementById("ppp").innerHTML = html;
             });
-
     }
-
+    
     window.addEventListener("load", init);
 </script>
 
